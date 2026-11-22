@@ -6,7 +6,7 @@ const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: { default: "Control de Aseo e Insumos", template: "%s · Control de Aseo" },
+  title: { default: "AsePrev · Control de aseo e insumos", template: "%s · AsePrev" },
   description: "Gestión de mantenimientos de aseo previos a preventivos e inventario de insumos.",
 };
 

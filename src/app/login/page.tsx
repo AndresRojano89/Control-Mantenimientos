@@ -14,8 +14,8 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
             <Wrench className="h-5 w-5" />
           </div>
           <div>
-            <p className="text-lg font-semibold leading-tight">Control de Aseo</p>
-            <p className="text-sm text-muted">Mantenimientos e insumos</p>
+            <p className="text-lg font-semibold leading-tight">AsePrev</p>
+            <p className="text-sm text-muted">Control de aseo e insumos</p>
           </div>
         </div>
         <div className="rounded-xl border border-border bg-surface p-6 shadow-sm">

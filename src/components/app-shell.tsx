@@ -70,8 +70,8 @@ function Brand() {
         <Wrench className="h-4 w-4" />
       </div>
       <div className="leading-tight">
-        <p className="text-sm font-semibold text-white">Control de Aseo</p>
-        <p className="text-xs text-[#7f8ea0]">Mantenimientos e insumos</p>
+        <p className="text-sm font-semibold text-white">AsePrev</p>
+        <p className="text-xs text-[#7f8ea0]">Control de aseo e insumos</p>
       </div>
     </div>
   );
@@ -148,7 +148,7 @@ export function AppShell({ profile, children }: { profile: Profile; children: Re
             >
               <Menu className="h-5 w-5" />
             </button>
-            <p className="text-sm font-semibold text-foreground lg:hidden">Control de Aseo</p>
+            <p className="text-sm font-semibold text-foreground lg:hidden">AsePrev</p>
             <p className="hidden text-sm text-muted lg:block">Sistema de control de mantenimientos de aseo e insumos</p>
           </div>
           <UserMenu profile={profile} />

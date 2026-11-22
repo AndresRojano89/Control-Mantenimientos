@@ -54,7 +54,7 @@ export function ExportButtons({
     try {
       const ExcelJS = (await import("exceljs")).default;
       const wb = new ExcelJS.Workbook();
-      wb.creator = "Control de Aseo";
+      wb.creator = "AsePrev";
       const ws = wb.addWorksheet(title.slice(0, 31));
       ws.addRow([title]).font = { bold: true, size: 14 };
       ws.addRow([subtitle]).font = { italic: true, color: { argb: "FF5B6878" } };
@@ -104,7 +104,7 @@ export function ExportButtons({
           const h = doc.internal.pageSize.getHeight();
           doc.setFontSize(8);
           doc.setTextColor(140);
-          doc.text(`Generado ${new Date().toLocaleString("es-CO")} · Página ${doc.getNumberOfPages()}`, 40, h - 20);
+          doc.text(`AsePrev · Generado ${new Date().toLocaleString("es-CO")} · Página ${doc.getNumberOfPages()}`, 40, h - 20);
         },
       });
       download(doc.output("blob"), fileName(title, "pdf"));
