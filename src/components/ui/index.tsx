@@ -210,9 +210,10 @@ export function EmptyState({
 }
 
 /* ------------------------------------------------------------------ Table */
+/** Tabla de escritorio (≥1280px). Debajo de ese ancho se usa MobileList para evitar desplazamiento horizontal. */
 export function Table({ className, ...props }: React.TableHTMLAttributes<HTMLTableElement>) {
   return (
-    <div className="hidden overflow-x-auto md:block">
+    <div className="hidden overflow-x-auto xl:block">
       <table className={cn("w-full text-left text-sm", className)} {...props} />
     </div>
   );
@@ -230,7 +231,7 @@ export function Td({ className, ...props }: React.TdHTMLAttributes<HTMLTableCell
 }
 /** Lista de tarjetas que reemplaza la tabla en móvil. */
 export function MobileList({ className, ...props }: React.HTMLAttributes<HTMLUListElement>) {
-  return <ul className={cn("divide-y divide-border md:hidden", className)} {...props} />;
+  return <ul className={cn("divide-y divide-border xl:hidden", className)} {...props} />;
 }
 
 /* ------------------------------------------------------------------ Misc */

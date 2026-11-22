@@ -2,7 +2,7 @@ import "server-only";
 import type { PostgrestError } from "@supabase/supabase-js";
 import type { ZodError } from "zod";
 import { getCurrentProfile } from "@/lib/auth";
-import type { ActionResult, Profile } from "@/lib/types";
+import type { Profile } from "@/lib/types";
 
 /** Traduce errores de Postgres/Supabase a mensajes comprensibles. */
 export function dbErrorMessage(error: PostgrestError | { message: string; code?: string }): string {
@@ -21,12 +21,14 @@ export function zodErrorMessage(error: ZodError): string {
   return error.issues[0]?.message ?? "Revise los datos del formulario.";
 }
 
-export function fail(error: string): ActionResult<never> {
+type Failure = { ok: false; error: string };
+
+export function fail(error: string): Failure {
   return { ok: false, error };
 }
 
 /** Verifica sesión/rol al inicio de cada Server Action (además de RLS en la BD). */
-export async function authorize(role?: "admin"): Promise<Profile | ActionResult<never>> {
+export async function authorize(role?: "admin"): Promise<Profile | Failure> {
   const profile = await getCurrentProfile();
   if (!profile || !profile.active) return fail("Su sesión expiró o su usuario está inactivo. Inicie sesión de nuevo.");
   if (role === "admin" && profile.role !== "admin") return fail("Solo un administrador puede realizar esta operación.");

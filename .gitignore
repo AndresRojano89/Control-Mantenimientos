@@ -43,3 +43,5 @@ next-env.d.ts
 # credenciales locales de desarrollo
 .dev-credentials.local
 
+!.env.example
+credenciales.local.txt
